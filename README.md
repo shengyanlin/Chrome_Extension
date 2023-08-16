@@ -1,44 +1,38 @@
-# Chrome Extension - Webpage Screenshot & HTML Downloader
+# GCG Extension
 
-This Chrome extension allows users to capture a screenshot of the currently visible part of a webpage and download its HTML source.
+The GCG Extension is designed for the Chrome browser, enabling users to capture screenshots and retrieve the HTML code of the current page.
 
 ## Features
 
-1. One-click screenshot of the current webpage.
-2. Automatically download the HTML source of the current webpage.
-
-## Installation Instructions
-
-1. Open the Chrome browser.
-2. Navigate to `chrome://extensions/`.
-3. Enable "Developer mode".
-4. Click on "Load unpacked" and select the folder containing this extension.
+1. **Capture Screenshots**: Users can capture the current visible tab's screenshot by clicking a button in the popup.
+2. **Retrieve HTML Code**: The extension automatically saves the HTML content of the current page.
 
 ## How to Use
 
-1. After installing and activating the extension, go to the webpage you wish to capture and download.
-2. Click on the extension icon in the toolbar.
-3. In the pop-up window, click the "Click me to Download" button.
-4. The extension will automatically capture the screenshot and download the webpage's HTML.
+1. Install and enable the GCG Extension.
+2. Click on the GCG icon in the toolbar.
+3. In the popup that appears, click the "Click me to Download" button.
+4. The extension will automatically capture a screenshot and retrieve the HTML code. Once done, a "Download Complete" message will be shown in the popup.
 
-## Development Information
+## Required Permissions
 
-### `popup.js`
+- **activeTab**: Access the current active tab.
+- **tabs**: Interact with browser tabs.
+- **scripting**: Inject and execute scripts.
+- **downloads**: Manage download tasks.
+- **host_permissions**: Access to all websites.
 
-This script is responsible for UI interactions like button click events and invoking the `content.js` script.
+## Development Details
 
-### `content.js`
+- **Manifest Version**: 3
+- **Extension Version**: 1.0.0
+- **Developer Notes**:
+    - `background.js` listens for messages from content scripts or the popup to manage downloads.
+    - `content.js` retrieves the HTML content from the page.
+    - `popup.html` provides the UI in the popup for user interaction.
+    - `popup.js` handles button clicks to execute screenshot capturing and HTML retrieval functions.
 
-This script captures the HTML of the current webpage and passes it to the background script for downloading.
+## Contact
 
-## Known Issues
+For questions or feedback, please reach out at [shengyanlin0503@gmail.com](mailto:shengyanlin0503@gmail.com).
 
-- [List any known issues or limitations]
-
-## Contact the Developer
-
-If you encounter any issues while using this extension or have any suggestions and feedback, please contact shengyanlin0503@gmail.com.
-
----
-
-Thank you for using this extension!
